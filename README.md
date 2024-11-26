@@ -1,49 +1,36 @@
-Student Database Management System
-Overview
-This program is a basic Student Database Management System written in C++. It provides essential functionalities such as adding, viewing, searching, editing, and removing student records stored in a file called student.txt.
+# Student Database Management System
 
-The system utilizes object-oriented programming principles, including classes, inheritance, and file handling, to efficiently manage and store student data.
+A simple Student Database Management System implemented in C++.
 
-Features
-Add Record
+## Overview
 
-Users can add new student records by entering the student's name, course, and section, which are saved in the student.txt file.
-List Records
+This program provides functionalities for adding, displaying, searching, editing, and deleting student records stored in a file named `student.txt`. It leverages object-oriented programming concepts such as classes, inheritance, and file handling to manage and persist student data.
 
-Displays all the student records stored in student.txt.
-Search Record
+## Features
 
-Allows users to search for a student by their assigned number (corresponding to their position in the file).
-Edit Record
+- **Add Record**: Input a student's name, course, and section, which are saved to `student.txt`.
+- **List Records**: Displays all student records stored in `student.txt`.
+- **Search Record**: Search for a student by their assigned number (position in the file).
+- **Edit Record**: Modify a specific student's details by their assigned number.
+- **Delete Record**: Remove a student record based on their assigned number.
+- **Exit Program**: Safely terminates the program.
 
-Provides the option to modify the details of an existing student record based on their assigned number.
-Delete Record
+## How to Use
 
-Removes a specific student record identified by their number.
-Exit Program
+1. Compile the code using a C++ compiler (e.g., `g++`):
+   ```bash
+   g++ -o student_management student_management.cpp
+   ```
+2. Run the executable:
+   ```bash
+   ./student_management
+   ```
+3. Follow the on-screen menu options to manage student records.
 
-Safely terminates the application.
-How to Use
-Compile the program using a C++ compiler (e.g., g++):
+## Menu Options
 
-bash
-
-
-g++ -o student_management student_management.cpp
-Run the executable:
-
-bash
-
-
-./student_management
-Follow the on-screen menu options to interact with the system and manage student records.
-
-Menu Options
-After launching the program, a menu is displayed with the following options:
-
-text
-
-
+When you run the program, you will see the following menu:
+```bash
 Student Database Management System
 1. Add Record
 2. List Records
@@ -52,50 +39,59 @@ Student Database Management System
 5. Delete Record
 0. Exit
 Enter your choice:
-Add Record: Enter the student's name, course, and section to save their information.
-List Records: View all the current student records stored in the file.
-Search Record: Find a student's information by their assigned number.
-Edit Record: Update the details of a specific student.
-Delete Record: Remove a student’s information from the file.
-Exit: Exit the program safely.
-File Structure
-The program interacts with a file named student.txt, located in the current working directory. Each line in the file represents a student record in the following format:
+```
 
-text
+**Add Record:** Input the student's name, course, and section to save the record.
 
+**List Records:** View all existing student records.
 
+**Search Record:** Search for a student by their assigned number.
+
+**Edit Record:** Modify the details of a specific student.
+
+**Delete Record:** Remove a student’s record.
+
+**Exit:** Exit the program.
+
+## File Structure
+
+The program reads from and writes to a file named `student.txt` in the current working directory. Each line in the file represents a student's record in the format:
+```bash
 Name Course Section
-Example of file contents:
-
-text
-
-
+```
+Example:
+```bash
 John Physics A1
 Jane Math B2
-Classes
-Person (Base Class)
+```
+## Classes
 
-Methods:
-ShowData(): Displays all student records.
-SearchRecord(): Searches for a student by their assigned number.
-DeleteRecord(): Deletes a record based on the assigned number.
-Student (Derived Class)
+**`Person` (Base Class)**
 
-Inherits from the Person class.
-Attributes:
-string course: Stores the course name.
-string section: Stores the student’s section.
-Methods:
-AddRecord(): Adds a new student record to the file.
-entrer(): Collects user input and invokes AddRecord().
-EditRecord(): Edits an existing student record.
-Error Handling
-If the student.txt file is missing or cannot be opened, an error message is displayed, but the program continues to run.
-Input validation is implemented to ensure users cannot search, edit, or delete records using invalid numbers.
-Dependencies
-This program relies on the following standard C++ libraries:
+- **Methods:**
+  - `ShowData()`: Displays all student records.
+  - `SearchRecord()`: Searches for a student by their number.
+  - `DeleteRecord()`: Deletes a student record by their number.
+ 
+**`Student` (Derived Class)**
 
-<iostream>: For input and output operations.
-<fstream>: For reading from and writing to files.
-<string>: For handling strings.
-<vector>: For dynamically managing collections of records.
+- **Attributes**:
+  - `string cours`: Course of the student.
+  - `string section`: Section of the student.
+    
+- **Methods:**
+  - `AddRecord()`: Adds a new student record.
+  - `entrer()`: Collects user input and calls `AddRecord`.
+  - `EditRecord()`: Edits an existing student record.
+
+## Error Handling
+
+- If the `student.txt` file does not exist or cannot be opened, the program displays an error message and continues running.
+- Input validation ensures that users cannot search, edit, or delete a record with an invalid number.
+
+## Dependencies
+
+- `<iostream>`: For input/output operations.
+- `<fstream>`: For file handling.
+- `<string>`: For string manipulation.
+- `<vector>`: For dynamic storage of records.
